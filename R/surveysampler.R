@@ -10,8 +10,10 @@
 #' analysis techniques.
 #'
 #' @docType package
-#' @name zscorer
+#' @name surveysampler
 #' @keywords internal
+#' importFrom graphics abline points
+#' importFrom stats approxfun density runif"
 #'
 #
 ################################################################################
