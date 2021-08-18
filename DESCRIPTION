@@ -1,0 +1,24 @@
+Package: surveysampler
+Type: Package
+Title: Survey Sampling and Analysis Tools
+Version: 0.1.0
+Authors@R: c(
+    person("Mark", "Myatt", email = "mark@brixtonhealth.com",
+           comment = c(ORCID = "0000-0003-1119-1474"),
+           role = c("aut", "cph")),
+    person("Ernest", "Guevarra", 
+           comment = c(ORCID = "0000-0002-4887-4415"), 
+           email = "ernest@guevarra.io", role = c("aut", "cre", "cph")))
+Description: Studies that evaluate survey sampling and analysis approaches
+    require varied techniques and methods not found in a single package in R.
+    This package provides utilities that aid and simplify these approaches to 
+    enable streamlined assessment and comparison of different survey sampling 
+    and analysis techniques.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Language: en-GB
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/ernestguevarra/surveysampler
+BugReports: https://github.com/ernestguevarra/surveysampler/issues
+RoxygenNote: 7.1.1
