@@ -28,6 +28,8 @@
 #' @return A data.frame drawn from *svy* that contains the primary sampling
 #'   units selected by the acceptance and rejection sampling.
 #'
+#' @author Mark Myatt and Ernest Guevarra
+#'
 #' @examples
 #' accept_reject_psu(
 #'   x = village_list,

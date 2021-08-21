@@ -16,6 +16,8 @@
 #' @examples
 #' village_list
 #'
+#' @source Data from a SMART survey conducted in Cameroon in 2020
+#'
 #
 ################################################################################
 "village_list"
@@ -45,6 +47,8 @@
 #'
 #' @examples
 #' sample_data
+#'
+#' #' @source Data from a SMART survey conducted in Cameroon in 2020
 #'
 #
 ################################################################################

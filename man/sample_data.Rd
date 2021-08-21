@@ -33,5 +33,7 @@ A tibble with 407 rows and 11 columns:
 \examples{
 sample_data
 
+#' @source Data from a SMART survey conducted in Cameroon in 2020
+
 }
 \keyword{datasets}

@@ -8,6 +8,9 @@ selected by probability proportional to population size}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 73 rows and 4 columns.
 }
+\source{
+Data from a SMART survey conducted in Cameroon in 2020
+}
 \usage{
 village_list
 }
