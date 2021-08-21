@@ -1,0 +1,42 @@
+title: surveysampler
+
+url: https://ernest.guevarra.io/surveysampler
+
+template:
+  params:
+    bootswatch: sandstone
+    ganalytics:
+
+navbar:
+  #type: inverse
+  structure:
+    right: [twitter, linkedin, github]
+
+  components:
+    twitter:
+      icon: "fab fa-twitter fa-lg"
+      href: https://twitter.com/ernestguevarra
+    linkedin:
+      icon: "fab fa-linkedin fa-lg"
+      href: https://www.linkedin.com/in/ernestguevarra/
+
+reference:
+- title: Description
+  contents:
+  - surveysampler
+
+- title: Sampling
+  contents:
+  - calculate_sampling_interval
+  - get_sample_systematic
+
+- title: Create unweighted survey sample from PPS
+  contents:
+  - accept_reject_psu
+  - create_sample_psm
+
+- title: Datasets
+  contents:
+  - village_list
+  - sample_data
+

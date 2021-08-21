@@ -103,8 +103,6 @@ sample_data
 #> # … with 397 more rows, and 1 more variable: clothes <chr>
 ```
 
-and returns a simulated unweighted survey sample.
-
 The function can be used as follows:
 
 ``` r
@@ -125,7 +123,7 @@ survey sample like below:
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
-    #> # A tibble: 407 x 11
+    #> # A tibble: 412 x 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <dbl> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
     #>  1 2020-12-19     1     2 NA             8    8.8   66.1      0   163 l      
@@ -138,7 +136,7 @@ survey sample like below:
     #>  8 2020-12-19     1     2 2017-12-02    36   12.6   94.5      0   148 h      
     #>  9 2020-12-19     1     1 2017-08-17    40   13.2   86.1      0   166 h      
     #> 10 2020-12-19     1     1 2017-02-09    46   13.9   91.3      0   170 h      
-    #> # … with 397 more rows, and 1 more variable: clothes <chr>
+    #> # … with 402 more rows, and 1 more variable: clothes <chr>
 
 #### Propensity score matching
 
@@ -165,20 +163,20 @@ create_sample_psm(
 
 and returns a simulated unweighted survey sample like below:
 
-    #> # A tibble: 307 x 11
+    #> # A tibble: 278 x 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <int> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
     #>  1 2020-12-16    18     2 NA             6    6.9   65        0   144 l      
     #>  2 2020-12-16    16     1 2020-05-22     6    7.8   65.6      0   140 l      
     #>  3 2020-12-19    13     2 2020-05-26     6    5.2   62.6      0   131 l      
-    #>  4 2020-12-19     3     2 2020-06-19     6    7     69.1      0   133 l      
-    #>  5 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      
-    #>  6 2020-12-20    14     1 NA             6    7.1   66.3      0   152 l      
-    #>  7 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      
-    #>  8 2020-12-23    30     2 NA             6    8.5   63.2      0   168 l      
-    #>  9 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
-    #> 10 2020-12-22    29     2 2020-05-10     7    6.3   63.6      0   127 l      
-    #> # … with 297 more rows, and 1 more variable: clothes <chr>
+    #>  4 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      
+    #>  5 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      
+    #>  6 2020-12-23    30     2 NA             6    8.5   63.2      0   168 l      
+    #>  7 2020-12-23    24     1 2020-06-04     6    8.5   68.6      0   161 l      
+    #>  8 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
+    #>  9 2020-12-22    32     1 NA             7    7.7   64.7      0   156 l      
+    #> 10 2020-12-23    24     2 2020-05-17     7    6.5   63.2      0   140 l      
+    #> # … with 268 more rows, and 1 more variable: clothes <chr>
 
 ## Citation
 
@@ -210,7 +208,8 @@ citation("surveysampler")
 
 ## License
 
-The `surveysampler` package is distributed under the GPL-3 license.
+The `surveysampler` package is distributed under the [GPL-3
+license](https://ernest.guevarra.io/surveysampler/LICENSE.html).
 
 ## Community guidelines
 
@@ -218,9 +217,9 @@ Feedback, bug reports and feature requests are welcome; file issues or
 seek support
 [here](https://github.com/ernestguevarra/surveysampler/issues). If you
 would like to contribute to the package, please see our [contributing
-guidelines](https://github.com/ernestguevarra/CONTRIBUTING.html).
+guidelines](https://ernest.guevarra.io/surveysampler/CONTRIBUTING.html).
 
 Please note that the `surveysampler` project is released with a
 [Contributor Code of
-Conduct](https://github.com/ernestguevarra/CODE_OF_CONDUCT.html). By
-contributing to this project, you agree to abide by its terms.
+Conduct](https://ernest.guevarra.io/surveysampler/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

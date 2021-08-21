@@ -62,8 +62,6 @@ village_list
 sample_data
 ```
 
-and returns a simulated unweighted survey sample.
-
 The function can be used as follows:
 
 ```{r, eval = FALSE}
@@ -130,10 +128,10 @@ citation("surveysampler")
 
 ## License
 
-The `surveysampler` package is distributed under the GPL-3 license.
+The `surveysampler` package is distributed under the [GPL-3 license](https://ernest.guevarra.io/surveysampler/LICENSE.html).
 
 ## Community guidelines
 
-Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/ernestguevarra/surveysampler/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://github.com/ernestguevarra/CONTRIBUTING.html).
+Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/ernestguevarra/surveysampler/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://ernest.guevarra.io/surveysampler/CONTRIBUTING.html).
 
-Please note that the `surveysampler` project is released with a [Contributor Code of Conduct](https://github.com/ernestguevarra/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the `surveysampler` project is released with a [Contributor Code of Conduct](https://ernest.guevarra.io/surveysampler/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
