@@ -22,7 +22,8 @@ Suggests:
     magrittr,
     dplyr,
     readxl,
-    tibble
+    tibble,
+    spelling
 Imports: 
     MatchIt
 LazyData: true
