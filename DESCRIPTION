@@ -1,7 +1,7 @@
 Package: surveysampler
 Type: Package
 Title: Survey Sampling and Analysis Tools
-Version: 0.1.0.9000
+Version: 0.0.0.9000
 Authors@R: c(
     person("Mark", "Myatt", email = "mark@brixtonhealth.com",
            comment = c(ORCID = "0000-0003-1119-1474"),
@@ -18,17 +18,18 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Depends: 
     R (>= 2.10)
+Imports: 
+    MatchIt
 Suggests: 
     magrittr,
     dplyr,
     readxl,
     tibble,
     spelling
-Imports: 
-    MatchIt
 LazyData: true
 Language: en-GB
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
 URL: https://github.com/ernestguevarra/surveysampler
 BugReports: https://github.com/ernestguevarra/surveysampler/issues
-RoxygenNote: 7.1.1
+

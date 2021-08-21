@@ -11,6 +11,9 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(surveysampler)
+library(tibble)
 ```
 
 # surveysampler: Survey Sampling and Analysis Tools
@@ -24,13 +27,95 @@ knitr::opts_chunk$set(
 
 Studies that evaluate survey sampling and analysis approaches require varied techniques and methods not found in a single package in R. This package provides utilities that aid and simplify these approaches to enable streamlined assessment and comparison of different survey sampling and analysis techniques.
 
+This package has been developed in support of a [Medecins Sans Frontieres UK](https://msf.org.uk) study on the impact of probability proportional to population size (PPS) sampling on health and nutrition surveys particularly in contexts of humanitarian emergencies.
+
 ## Installation
 
 `surveysampler` is not yet available from [CRAN](https://CRAN.R-project.org) but the development version is available from [GitHub](https://github.com/) and can be installed with:
 
-```r
+```{r, eval = FALSE}
 if (!require(remotes)) install.packages("remotes")
 remotes::install_github("ernestguevarra/surveysampler")
 ```
 
+## Usage
 
+### Recreate an unweighted survey sample from a probability proportional to population size (PPS)-drawn dataset
+
+Given a dataset from a typical health and nutrition survey with a sample that has been drawn using probability proportional to population size (PPS) and a dataset consisting of all the potential sampling units with their population sizes from which the survey sample was taken, we develop two approaches to recreate an unweighted survey sample. Such approaches allow for the use of readily available PPS-drawn datasets in studies that aim to test the impact of PPS samples on health and nutrition indicators measurement.
+
+#### Acceptance-rejection algorithm
+
+Using the probability density of the populations of all the potential sampling units from which a specific survey sample was drawn from, we accept or reject a sampling unit from the survey sample if it matches the probability density of the populations of potential sampling units. The idea here is that we pick sampling units that we might get from a random or systematic sample of potential sampling units.
+
+We developed the function `accept_reject_sample()` for this purpose. The function requires two datasets:
+
+1. a full list of potential sampling units with their populations such as the one below
+
+```{r}
+village_list
+```
+
+2. a survey dataset drawn via PPS from the full list of potential sampling units such as the one below
+
+```{r}
+sample_data
+```
+
+and returns a simulated unweighted survey sample.
+
+The function can be used as follows:
+
+```{r, eval = FALSE}
+accept_reject_psu(
+  x = village_list,
+  svy = sample_data,
+  psu = c("id", "psu"),
+  match = "cluster",
+  pop = "population",
+  verbose = FALSE,
+  show_plot = TRUE
+)
+```
+
+and returns a plot of the accepted and rejected samples against the probability density of the populations, and the simulated unweighted survey sample like below:
+
+```{r, echo = FALSE}
+accept_reject_psu(
+  x = village_list,
+  svy = sample_data,
+  psu = c("id", "psu"),
+  match = "cluster",
+  pop = "population",
+  verbose = FALSE,
+  show_plot = TRUE
+)
+```
+
+#### Propensity score matching
+
+Using a dataset of all potential sampling units and their population sizes from which a specific survey sample was drawn from, we draw a simple random sample or a systematic sample and then match with the survey sample based on propensity scores of their population sizes. The simulated survey sample is then created from sampling units from the survey sample that have been directly selected or that match the potential sampling units that are not in the survey sample.
+
+We developed the function `create_sample_psm()` for this purpose which can be used as follows:
+
+```{r, eval = FALSE}
+create_sample_psm(
+  x = village_list,
+  svy = sample_data,
+  psu = c("id", "psu"),
+  match = "cluster", 
+  pop = "population"
+)
+```
+
+and returns a simulated unweighted survey sample like below:
+
+```{r, echo = FALSE}
+create_sample_psm(
+  x = village_list,
+  svy = sample_data,
+  psu = c("id", "psu"),
+  match = "cluster", 
+  pop = "population"
+)
+```

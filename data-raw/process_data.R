@@ -19,7 +19,8 @@ village_list <- readxl::read_xlsx(
     cluster = Grappe
   ) %>%
   mutate(
-    id = 1:n()
+    id = 1:n(),
+    population = floor(population)
   ) %>%
   add_row(
     village = "BODO FOUDA",
