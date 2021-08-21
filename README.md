@@ -4,6 +4,13 @@
 # surveysampler: Survey Sampling and Analysis Tools
 
 <!-- badges: start -->
+
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/ernestguevarra/surveysampler/workflows/R-CMD-check/badge.svg)](https://github.com/ernestguevarra/surveysampler/actions)
 <!-- badges: end -->
 
 Studies that evaluate survey sampling and analysis approaches require
