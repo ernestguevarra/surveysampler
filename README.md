@@ -11,6 +11,8 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/ernestguevarra/surveysampler/workflows/R-CMD-check/badge.svg)](https://github.com/ernestguevarra/surveysampler/actions)
+[![Coveralls test
+coverage](https://coveralls.io/repos/github/ernestguevarra/surveysampler/badge.svg)](https://coveralls.io/r/ernestguevarra/surveysampler?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ernestguevarra/surveysampler/badge)](https://www.codefactor.io/repository/github/ernestguevarra/surveysampler)
 <!-- badges: end -->
 
@@ -123,20 +125,20 @@ survey sample like below:
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
-    #> # A tibble: 412 x 11
+    #> # A tibble: 389 x 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <dbl> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
-    #>  1 2020-12-19     1     2 NA             8    8.8   66.1      0   163 l      
-    #>  2 2020-12-19     1     1 2020-03-20     9    8.6   72.4      0   149 l      
-    #>  3 2020-12-19     1     2 2019-04-16    20   10.1   79.6      0   142 l      
-    #>  4 2020-12-19     1     2 2018-12-05    24    9     79.2      0   136 h      
-    #>  5 2020-12-19     1     1 2018-11-12    25   13.3   86.8      0   157 h      
-    #>  6 2020-12-19     1     2 NA            28    9.2   85.9      0   118 h      
-    #>  7 2020-12-19     1     1 2018-01-16    35   15.1   95.6      0   147 h      
-    #>  8 2020-12-19     1     2 2017-12-02    36   12.6   94.5      0   148 h      
-    #>  9 2020-12-19     1     1 2017-08-17    40   13.2   86.1      0   166 h      
-    #> 10 2020-12-19     1     1 2017-02-09    46   13.9   91.3      0   170 h      
-    #> # … with 402 more rows, and 1 more variable: clothes <chr>
+    #>  1 2020-12-20     2     2 NA            14    8     74.9      0   129 l      
+    #>  2 2020-12-20     2     2 2019-05-07    19   11.4   82.7      0   150 l      
+    #>  3 2020-12-20     2     1 2019-01-12    23    9     78.1      0   122 l      
+    #>  4 2020-12-20     2     2 2017-08-28    39   13.1   94.4      0   153 h      
+    #>  5 2020-12-20     2     1 2017-02-09    46   14.5   97.6      0   157 h      
+    #>  6 2020-12-20     2     2 NA            48   17.1  102.       0   179 h      
+    #>  7 2020-12-19     2     2 2016-01-05    59   15.1  105.       0   159 h      
+    #>  8 2020-12-19     2     2 NA            59   17.8  107.       0   164 h      
+    #>  9 2020-12-18     4     2 2020-05-03     7    7.5   68.2      0   148 l      
+    #> 10 2020-12-18     4     1 2019-10-14    14   11.5   86.7      0   148 h      
+    #> # … with 379 more rows, and 1 more variable: clothes <chr>
 
 #### Propensity score matching
 
@@ -163,20 +165,20 @@ create_sample_psm(
 
 and returns a simulated unweighted survey sample like below:
 
-    #> # A tibble: 278 x 11
+    #> # A tibble: 311 x 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <int> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
     #>  1 2020-12-16    18     2 NA             6    6.9   65        0   144 l      
     #>  2 2020-12-16    16     1 2020-05-22     6    7.8   65.6      0   140 l      
     #>  3 2020-12-19    13     2 2020-05-26     6    5.2   62.6      0   131 l      
-    #>  4 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      
+    #>  4 2020-12-20    14     1 NA             6    7.1   66.3      0   152 l      
     #>  5 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      
-    #>  6 2020-12-23    30     2 NA             6    8.5   63.2      0   168 l      
-    #>  7 2020-12-23    24     1 2020-06-04     6    8.5   68.6      0   161 l      
-    #>  8 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
-    #>  9 2020-12-22    32     1 NA             7    7.7   64.7      0   156 l      
-    #> 10 2020-12-23    24     2 2020-05-17     7    6.5   63.2      0   140 l      
-    #> # … with 268 more rows, and 1 more variable: clothes <chr>
+    #>  6 2020-12-18     4     2 2020-05-03     7    7.5   68.2      0   148 l      
+    #>  7 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
+    #>  8 2020-12-22    29     2 2020-05-10     7    6.3   63.6      0   127 l      
+    #>  9 2020-12-22    29     2 2020-04-24     7    7.4   66.6      0   134 l      
+    #> 10 2020-12-22    32     1 NA             7    7.7   64.7      0   156 l      
+    #> # … with 301 more rows, and 1 more variable: clothes <chr>
 
 ## Citation
 
