@@ -45,6 +45,16 @@ units selected by propensity score matching.
 Select sampling units from a set of potential sampling units using propensity
 score matching (PSM)
 }
+\examples{
+create_sample_psm(
+  x = village_list,
+  svy = sample_data,
+  psu = c("id", "psu"),
+  match = "cluster",
+  pop = "population"
+)
+
+}
 \author{
 Mark Myatt and Ernest Guevarra
 }

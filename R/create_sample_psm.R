@@ -26,6 +26,15 @@
 #'
 #' @author Mark Myatt and Ernest Guevarra
 #'
+#' @examples
+#' create_sample_psm(
+#'   x = village_list,
+#'   svy = sample_data,
+#'   psu = c("id", "psu"),
+#'   match = "cluster",
+#'   pop = "population"
+#' )
+#'
 #' @export
 #'
 #
@@ -54,9 +63,7 @@ create_sample_psm <- function(x, svy,
   }
 
   ## Process survey data
-  sample_y <- svy[ , psu[2]]
-  names(sample_y) <- "psu"
-  sample_y <- merge(sample_y, sample_x, by = "psu", all.x = TRUE)
+  sample_y <- merge(svy, sample_x, by = "psu", all.x = TRUE)
   sample_y <- stats::aggregate(pop ~ psu, data = sample_y, FUN = unique)
   sample_y <- data.frame(
     id = sample_x$id[sample_x$psu %in% sample_y$psu], sample_y
@@ -65,19 +72,22 @@ create_sample_psm <- function(x, svy,
   ## Get sampling type
   samp <- match.arg(sampling_type)
 
+  ## Determine number of clusters to select
+  n_clusters <- max(sample_y$psu)
+
   if (samp == "systematic") {
-    ## Process cluster list dataset to produce a systematic sample of 30
+    ## Process cluster list dataset to produce a systematic sample of n_clusters
     ## clusters.
-    sampling_interval <- floor(nrow(x) / 30)
+    sampling_interval <- floor(nrow(x) / n_clusters)
     random_start <- sample(1:sampling_interval, size = 1)
     selected_row_numbers <- seq(from = random_start,
                                 to = nrow(x),
                                 by = sampling_interval)
     sample_x <- sample_x[selected_row_numbers, ]
   } else {
-    ## Process cluster list dataset to produce a systematic sample of 30
+    ## Process cluster list dataset to produce a systematic sample of n_clusters
     ## clusters.
-    selected_row_numbers <- sample(1:nrow(x), size = 30)
+    selected_row_numbers <- sample(1:nrow(x), size = n_clusters)
     sample_x <- sample_x[selected_row_numbers, ]
   }
 
