@@ -119,3 +119,21 @@ create_sample_psm(
   pop = "population"
 )
 ```
+
+## Citation
+
+If you find the `surveysampler` package useful please cite using the suggested citation provided by a call to the `citation` function as follows:
+
+```{r citation}
+citation("surveysampler")
+```
+
+## License
+
+The `surveysampler` package is distributed under the GPL-3 license.
+
+## Community guidelines
+
+Feedback, bug reports and feature requests are welcome; file issues or seek support [here](https://github.com/ernestguevarra/surveysampler/issues). If you would like to contribute to the package, please see our [contributing guidelines](https://github.com/ernestguevarra/CONTRIBUTING.html).
+
+Please note that the `surveysampler` project is released with a [Contributor Code of Conduct](https://github.com/ernestguevarra/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

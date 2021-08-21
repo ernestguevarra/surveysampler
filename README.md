@@ -125,20 +125,20 @@ survey sample like below:
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
-    #> # A tibble: 391 x 11
+    #> # A tibble: 407 x 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <dbl> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
-    #>  1 2020-12-18     5     1 2019-12-08    12    8.8   74.4      0   147 l      
-    #>  2 2020-12-18     5     1 2019-10-01    14    7.8   74.9      0   136 l      
-    #>  3 2020-12-18     5     2 2019-06-18    18    8.9   78.2      0   133 l      
-    #>  4 2020-12-18     5     2 2018-09-02    27    8.5   81.2      0   121 h      
-    #>  5 2020-12-18     5     2 2018-03-12    33   12.2   86.5      0   159 l      
-    #>  6 2020-12-18     5     1 2017-06-30    41   13.8   96.3      0   156 h      
-    #>  7 2020-12-18     5     2 2017-06-12    42   13.9  103.       0   142 h      
-    #>  8 2020-12-18     5     2 2017-02-11    46   16.2  102.       0   159 h      
-    #>  9 2020-12-18     5     2 2016-10-10    50   13.4   99.1      0   146 h      
-    #> 10 2020-12-18     5     2 2016-10-17    50   14.3  100.       0   159 h      
-    #> # … with 381 more rows, and 1 more variable: clothes <chr>
+    #>  1 2020-12-19     1     2 NA             8    8.8   66.1      0   163 l      
+    #>  2 2020-12-19     1     1 2020-03-20     9    8.6   72.4      0   149 l      
+    #>  3 2020-12-19     1     2 2019-04-16    20   10.1   79.6      0   142 l      
+    #>  4 2020-12-19     1     2 2018-12-05    24    9     79.2      0   136 h      
+    #>  5 2020-12-19     1     1 2018-11-12    25   13.3   86.8      0   157 h      
+    #>  6 2020-12-19     1     2 NA            28    9.2   85.9      0   118 h      
+    #>  7 2020-12-19     1     1 2018-01-16    35   15.1   95.6      0   147 h      
+    #>  8 2020-12-19     1     2 2017-12-02    36   12.6   94.5      0   148 h      
+    #>  9 2020-12-19     1     1 2017-08-17    40   13.2   86.1      0   166 h      
+    #> 10 2020-12-19     1     1 2017-02-09    46   13.9   91.3      0   170 h      
+    #> # … with 397 more rows, and 1 more variable: clothes <chr>
 
 #### Propensity score matching
 
@@ -165,7 +165,7 @@ create_sample_psm(
 
 and returns a simulated unweighted survey sample like below:
 
-    #> # A tibble: 334 x 11
+    #> # A tibble: 307 x 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <int> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
     #>  1 2020-12-16    18     2 NA             6    6.9   65        0   144 l      
@@ -174,8 +174,53 @@ and returns a simulated unweighted survey sample like below:
     #>  4 2020-12-19     3     2 2020-06-19     6    7     69.1      0   133 l      
     #>  5 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      
     #>  6 2020-12-20    14     1 NA             6    7.1   66.3      0   152 l      
-    #>  7 2020-12-23    30     2 NA             6    8.5   63.2      0   168 l      
-    #>  8 2020-12-23    24     1 2020-06-04     6    8.5   68.6      0   161 l      
+    #>  7 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      
+    #>  8 2020-12-23    30     2 NA             6    8.5   63.2      0   168 l      
     #>  9 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
     #> 10 2020-12-22    29     2 2020-05-10     7    6.3   63.6      0   127 l      
-    #> # … with 324 more rows, and 1 more variable: clothes <chr>
+    #> # … with 297 more rows, and 1 more variable: clothes <chr>
+
+## Citation
+
+If you find the `surveysampler` package useful please cite using the
+suggested citation provided by a call to the `citation` function as
+follows:
+
+``` r
+citation("surveysampler")
+#> Warning in citation("surveysampler"): no date field in DESCRIPTION file of
+#> package 'surveysampler'
+#> 
+#> To cite package 'surveysampler' in publications use:
+#> 
+#>   Mark Myatt and Ernest Guevarra (2021). surveysampler: Survey Sampling
+#>   and Analysis Tools. R package version 0.1.0.
+#>   https://github.com/ernestguevarra/surveysampler
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {surveysampler: Survey Sampling and Analysis Tools},
+#>     author = {Mark Myatt and Ernest Guevarra},
+#>     year = {2021},
+#>     note = {R package version 0.1.0},
+#>     url = {https://github.com/ernestguevarra/surveysampler},
+#>   }
+```
+
+## License
+
+The `surveysampler` package is distributed under the GPL-3 license.
+
+## Community guidelines
+
+Feedback, bug reports and feature requests are welcome; file issues or
+seek support
+[here](https://github.com/ernestguevarra/surveysampler/issues). If you
+would like to contribute to the package, please see our [contributing
+guidelines](https://github.com/ernestguevarra/CONTRIBUTING.html).
+
+Please note that the `surveysampler` project is released with a
+[Contributor Code of
+Conduct](https://github.com/ernestguevarra/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.
