@@ -88,7 +88,7 @@ create_sample_psm <- function(x, svy,
   } else {
     ## Process cluster list dataset to produce a systematic sample of n_clusters
     ## clusters.
-    selected_row_numbers <- sample(1:nrow(sample_x), size = n_clusters)
+    selected_row_numbers <- sample(seq_len(nrow(sample_x)), size = n_clusters)
     sample_x <- sample_x[selected_row_numbers, ]
   }
 
@@ -102,7 +102,7 @@ create_sample_psm <- function(x, svy,
 
   # Combine rows of sample list and rows of actual data list
   xy <- rbind(sample_y, sample_x)
-  row.names(xy) <- 1:nrow(xy)
+  row.names(xy) <- seq_len(nrow(xy))
 
   # Perform propensity score matching based on population using nearest
   # neighbour algorithm
