@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/index.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/accept_reject_psu.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/calculate_sampling_interval.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/create_sample_psm.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/get_sample_systematic.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/sample_data.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/surveysampler.html</loc>
+  </url>
+  <url>
+    <loc>https://ernest.guevarra.io/surveysampler/reference/village_list.html</loc>
+  </url>
+</urlset>
