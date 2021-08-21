@@ -73,17 +73,18 @@ create_sample_psm <- function(x, svy,
   samp <- match.arg(sampling_type)
 
   ## Determine number of clusters to select
-  n_clusters <- max(sample_y$psu)
+  n_clusters <- nrow(sample_y)
 
   if (samp == "systematic") {
     ## Process cluster list dataset to produce a systematic sample of n_clusters
     ## clusters.
-    sampling_interval <- floor(nrow(x) / n_clusters)
-    random_start <- sample(1:sampling_interval, size = 1)
-    selected_row_numbers <- seq(from = random_start,
-                                to = nrow(x),
-                                by = sampling_interval)
-    sample_x <- sample_x[selected_row_numbers, ]
+    #sampling_interval <- floor(nrow(x) / n_clusters)
+    #random_start <- sample(1:sampling_interval, size = 1)
+    #selected_row_numbers <- seq(from = random_start,
+    #                            to = nrow(x),
+    #                            by = sampling_interval)
+    #sample_x <- sample_x[selected_row_numbers, ]
+    sample_x <- get_sample_systematic(x = sample_x, n_sample = n_clusters)
   } else {
     ## Process cluster list dataset to produce a systematic sample of n_clusters
     ## clusters.
