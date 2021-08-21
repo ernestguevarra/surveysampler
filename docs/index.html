@@ -114,7 +114,7 @@
 </ol>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">village_list</span>
-<span class="co">#&gt; # A tibble: 73 x 4</span>
+<span class="co">#&gt; # A tibble: 73 × 4</span>
 <span class="co">#&gt;       id village        population cluster</span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;  </span>
 <span class="co">#&gt;  1     1 BODO FOUDA          1733. 1      </span>
@@ -133,7 +133,7 @@
 </ol>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sample_data</span>
-<span class="co">#&gt; # A tibble: 407 x 11</span>
+<span class="co">#&gt; # A tibble: 407 × 11</span>
 <span class="co">#&gt;    surveydate   psu   sex birthdate    age weight height oedema  muac measure</span>
 <span class="co">#&gt;    &lt;date&gt;     &lt;int&gt; &lt;int&gt; &lt;date&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;  </span>
 <span class="co">#&gt;  1 2020-12-16    18     2 NA             6    6.9   65        0   144 l      </span>
@@ -160,20 +160,20 @@
 <span class="op">)</span></code></pre></div>
 <p>and returns a plot of the accepted and rejected samples against the probability density of the populations, and the simulated unweighted survey sample like below:</p>
 <p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 397 x 11</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 408 × 11</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    surveydate   psu   sex birthdate    age weight height oedema  muac measure</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;date&gt;     &lt;dbl&gt; &lt;int&gt; &lt;date&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;  </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2020-12-18     5     1 2019-12-08    12    8.8   74.4      0   147 l      </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 2020-12-18     5     1 2019-10-01    14    7.8   74.9      0   136 l      </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2020-12-18     5     2 2019-06-18    18    8.9   78.2      0   133 l      </span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2020-12-18     5     2 2018-09-02    27    8.5   81.2      0   121 h      </span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2020-12-18     5     2 2018-03-12    33   12.2   86.5      0   159 l      </span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2020-12-18     5     1 2017-06-30    41   13.8   96.3      0   156 h      </span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2020-12-18     5     2 2017-06-12    42   13.9  103.       0   142 h      </span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2020-12-18     5     2 2017-02-11    46   16.2  102.       0   159 h      </span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2020-12-18     5     2 2016-10-10    50   13.4   99.1      0   146 h      </span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2020-12-18     5     2 2016-10-17    50   14.3  100.       0   159 h      </span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 387 more rows, and 1 more variable: clothes &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2020-12-18     4     2 2020-05-03     7    7.5   68.2      0   148 l      </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 2020-12-18     4     1 2019-10-14    14   11.5   86.7      0   148 h      </span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2020-12-18     4     2 2019-10-17    14   10     84.5      0   142 l      </span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2020-12-18     4     2 NA            22    9.8   83.1      0   144 h      </span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2020-12-18     4     2 NA            26   13.6   77.3      0   144 h      </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2020-12-18     4     2 NA            28   10.4   82.3      0   161 h      </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2020-12-18     4     1 NA            38   14.5   96.4      0   162 h      </span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2020-12-18     4     1 NA            38   14.8  103.       0   155 h      </span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2020-12-18     4     2 2017-01-28    46   14.3  101.       0   153 h      </span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2020-12-18     4     1 NA            49   14.4   99.2      0   156 h      </span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 398 more rows, and 1 more variable: clothes &lt;chr&gt;</span></span></code></pre></div>
 </div>
 <div id="propensity-score-matching" class="section level4">
 <h4 class="hasAnchor">
@@ -189,20 +189,20 @@
   pop <span class="op">=</span> <span class="st">"population"</span>
 <span class="op">)</span></code></pre></div>
 <p>and returns a simulated unweighted survey sample like below:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 289 x 11</span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 271 × 11</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    surveydate   psu   sex birthdate    age weight height oedema  muac measure</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;date&gt;     &lt;int&gt; &lt;int&gt; &lt;date&gt;     &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;chr&gt;  </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2020-12-16    18     2 NA             6    6.9   65        0   144 l      </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 2020-12-16    16     1 2020-05-22     6    7.8   65.6      0   140 l      </span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 2020-12-19    13     2 2020-05-26     6    5.2   62.6      0   131 l      </span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2020-12-20    14     1 NA             6    7.1   66.3      0   152 l      </span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      </span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2020-12-18     4     2 2020-05-03     7    7.5   68.2      0   148 l      </span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2020-12-18    10     1 NA             7    6.9   69        0   119 l      </span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2020-12-22    32     1 NA             7    7.7   64.7      0   156 l      </span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2020-12-16    20     1 NA             8    7.1   69.8      0   132 l      </span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2020-12-16    19     1 2020-03-22     8    6     68        0   121 h      </span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 279 more rows, and 1 more variable: clothes &lt;chr&gt;</span></span></code></pre></div>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      </span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 2020-12-23    24     1 2020-06-04     6    8.5   68.6      0   161 l      </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 2020-12-18    10     1 NA             7    6.9   69        0   119 l      </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 2020-12-22    29     2 2020-05-10     7    6.3   63.6      0   127 l      </span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 2020-12-22    29     2 2020-04-24     7    7.4   66.6      0   134 l      </span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 2020-12-22    32     1 NA             7    7.7   64.7      0   156 l      </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 2020-12-23    24     2 2020-05-17     7    6.5   63.2      0   140 l      </span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 261 more rows, and 1 more variable: clothes &lt;chr&gt;</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -283,6 +283,7 @@
 <li><a href="https://www.repostatus.org/#wip"><img src="https://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public."></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://github.com/ernestguevarra/surveysampler/actions"><img src="https://github.com/ernestguevarra/surveysampler/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/ernestguevarra/surveysampler/actions/workflows/test-coverage.yaml"><img src="https://github.com/ernestguevarra/surveysampler/actions/workflows/test-coverage.yaml/badge.svg" alt="test-coverage"></a></li>
 <li><a href="https://codecov.io/gh/ernestguevarra/surveysampler?branch=main"><img src="https://codecov.io/gh/ernestguevarra/surveysampler/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://www.codefactor.io/repository/github/ernestguevarra/surveysampler"><img src="https://www.codefactor.io/repository/github/ernestguevarra/surveysampler/badge" alt="CodeFactor"></a></li>
 </ul>
