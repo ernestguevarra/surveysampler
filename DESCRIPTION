@@ -29,3 +29,5 @@ Suggests:
     dplyr,
     readxl,
     tibble
+Imports: 
+    MatchIt

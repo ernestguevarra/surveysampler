@@ -35,7 +35,11 @@ village_list <- readxl::read_xlsx(
   ) %>%
   mutate(
     cluster = if_else(cluster == "1 et 2", "1", cluster),
-    cluster = if_else(cluster == "33 et 34", "33", cluster)
+    cluster = if_else(cluster == "33 et 34", "33", cluster),
+    cluster = if_else(village == "MALTAM", "35", cluster),
+    cluster = if_else(village == "HILLEGUIM", "36", cluster),
+    cluster = if_else(village == "MAGOURDE  1", "37", cluster),
+    cluster = if_else(village == "CAMP BEDA", "38", cluster)
   ) %>%
   relocate(id)
 

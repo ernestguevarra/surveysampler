@@ -29,7 +29,9 @@ Authors:
 }
 
 }
+\keyword{MatchIt}
 \keyword{abline}
+\keyword{aggregate}
 \keyword{approxfun}
 \keyword{density}
 \keyword{dev.off}
@@ -37,6 +39,8 @@ Authors:
 \keyword{graphics}
 \keyword{importFrom}
 \keyword{internal}
+\keyword{match.data}
+\keyword{matchit}
 \keyword{png}
 \keyword{points}
 \keyword{runif}

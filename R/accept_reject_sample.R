@@ -50,6 +50,11 @@ accept_reject_psu <- function(x, svy, psu = "psu",
                               match = NULL, pop = "pop",
                               verbose = TRUE, show_plot = TRUE,
                               save_plot = FALSE) {
+  ## Re-create psu parameter
+  if (length(psu) == 1) {
+    psu <- c(psu, psu)
+  }
+
   ## Make a list (vector) of PSU names in survey dataset
   psu.in.svy <- sort(unique(svy[[psu[2]]]))
 
