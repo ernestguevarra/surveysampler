@@ -25,6 +25,7 @@ library(tibble)
 [![test-coverage](https://github.com/ernestguevarra/surveysampler/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/ernestguevarra/surveysampler/actions/workflows/test-coverage.yaml)
 [![Codecov test coverage](https://codecov.io/gh/ernestguevarra/surveysampler/branch/main/graph/badge.svg)](https://codecov.io/gh/ernestguevarra/surveysampler?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ernestguevarra/surveysampler/badge)](https://www.codefactor.io/repository/github/ernestguevarra/surveysampler)
+[![DOI](https://zenodo.org/badge/397585221.svg)](https://zenodo.org/badge/latestdoi/397585221)
 <!-- badges: end -->
 
 Studies that evaluate survey sampling and analysis approaches require varied techniques and methods not found in a single package in R. This package provides utilities that aid and simplify these approaches to enable streamlined assessment and comparison of different survey sampling and analysis techniques.
