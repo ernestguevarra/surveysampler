@@ -22,3 +22,10 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/ernestguevarra/surveysampler
 BugReports: https://github.com/ernestguevarra/surveysampler/issues
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    magrittr,
+    dplyr,
+    readxl,
+    tibble

@@ -32,9 +32,12 @@ Authors:
 \keyword{abline}
 \keyword{approxfun}
 \keyword{density}
+\keyword{dev.off}
+\keyword{grDevices}
 \keyword{graphics}
 \keyword{importFrom}
 \keyword{internal}
+\keyword{png}
 \keyword{points}
-\keyword{runif"}
+\keyword{runif}
 \keyword{stats}

@@ -13,7 +13,8 @@
 #' @name surveysampler
 #' @keywords internal
 #' importFrom graphics abline points
-#' importFrom stats approxfun density runif"
+#' importFrom stats approxfun density runif
+#' importFrom grDevices dev.off png
 #'
 #
 ################################################################################

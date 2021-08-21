@@ -5,7 +5,16 @@
 \title{Accept or reject sampling units against population density of potential
 sampling units}
 \usage{
-accept_reject_psu(x, svy, psu = "psu", match = NULL, pop = "pop")
+accept_reject_psu(
+  x,
+  svy,
+  psu = "psu",
+  match = NULL,
+  pop = "pop",
+  verbose = TRUE,
+  show_plot = TRUE,
+  save_plot = FALSE
+)
 }
 \arguments{
 \item{x}{A data.frame of all potential primary sampling units (PSUs) to
@@ -25,6 +34,16 @@ in \emph{x} is the same as primary sampling unit in \emph{svy}.}
 
 \item{pop}{A single character value corresponding to the variable name for
 the population figures in \emph{x}. Default is \emph{"pop"}.}
+
+\item{verbose}{Logical. Should text of sample acceptance or rejection be
+printed/shown? Default to TRUE.}
+
+\item{show_plot}{Logical. Should plot of sample acceptance or rejection be
+shown? Default to TRUE.}
+
+\item{save_plot}{Logical. Should plot of sample acceptance or rejection be
+saved? Default to FALSE. If set to TRUE when \emph{show_plot} is FALSE, no plot
+will be saved.}
 }
 \value{
 A data.frame drawn from \emph{svy} that contains the primary sampling
@@ -35,5 +54,14 @@ Accept or reject sampling units against population density of potential
 sampling units
 }
 \examples{
+accept_reject_psu(
+  x = village_list,
+  svy = sample_data,
+  psu = c("id", "psu"),
+  match = "cluster",
+  pop = "population",
+  verbose = FALSE,
+  show_plot = FALSE
+ )
 
 }
