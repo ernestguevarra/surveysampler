@@ -4,7 +4,7 @@ si <- calculate_sampling_interval(
 )
 
 test_that("output is an integer", {
-  expect_is(si, "numeric")
+  expect_type(si, "double")
 })
 
 
