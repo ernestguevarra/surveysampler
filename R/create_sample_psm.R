@@ -63,7 +63,8 @@ create_sample_psm <- function(x, svy,
   }
 
   ## Process survey data
-  sample_y <- merge(svy, sample_x, by = "psu", all.x = TRUE)
+  sample_y <- merge(svy, sample_x, by.x = psu[2], by.y = "psu", all.x = TRUE)
+  names(sample_y)[1] <- "psu"
   sample_y <- stats::aggregate(pop ~ psu, data = sample_y, FUN = unique)
   sample_y <- data.frame(
     id = sample_x$id[sample_x$psu %in% sample_y$psu], sample_y
