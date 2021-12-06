@@ -31,3 +31,23 @@ sim_survey <- accept_reject_psu(
   verbose = FALSE,
   show_plot = FALSE
 )
+
+test_that("output has the correct structure", {
+  expect_true(all(names(svy) %in% names(sim_survey)))
+  expect_equal(names(svy), names(sim_survey))
+})
+
+sim_survey <- accept_reject_psu(
+  x = x,
+  svy = svy,
+  #psu = c("id", "psu"),
+  match = "clusterID",
+  pop = "population",
+  verbose = TRUE,
+  show_plot = TRUE
+)
+
+test_that("output has the correct structure", {
+  expect_true(all(names(svy) %in% names(sim_survey)))
+  expect_equal(names(svy), names(sim_survey))
+})
