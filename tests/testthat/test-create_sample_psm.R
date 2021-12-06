@@ -26,7 +26,6 @@ new_sample <- create_sample_psm(
   match = "clusterID", pop = "population"
 )
 
-
 test_that("create_sample_psm produces a data.frame", {
   expect_s3_class(new_sample, "data.frame")
 })
@@ -35,3 +34,25 @@ test_that("output has the correct structure", {
   expect_true(all(names(svy) %in% names(new_sample)))
   expect_equal(names(svy), names(new_sample))
 })
+
+
+## Change variables name of village list
+x <- village_list
+names(x) <- c("psu", "villageName", "population", "clusterID")
+
+svy <- sample_data
+names(svy) <- c("surveydate", "psu", "sex", "birthdate", "age",
+                "weight", "height", "oedema", "muac", "measure", "clothes")
+
+new_sample <- create_sample_psm(
+  x = x, svy = svy,
+  #psu = c("villageNumber", "cluster_number"),
+  match = "clusterID", pop = "population",
+  sampling_type = "systematic"
+)
+
+test_that("output has the correct structure", {
+  expect_true(all(names(svy) %in% names(new_sample)))
+  expect_equal(names(svy), names(new_sample))
+})
+

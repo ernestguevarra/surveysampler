@@ -14,3 +14,20 @@ test_that("output is a data.frame", {
 })
 
 
+## Change variables name of village list
+x <- village_list
+names(x) <- c("psu", "villageName", "population", "clusterID")
+
+svy <- sample_data
+names(svy) <- c("surveydate", "psu", "sex", "birthdate", "age",
+                "weight", "height", "oedema", "muac", "measure", "clothes")
+
+sim_survey <- accept_reject_psu(
+  x = x,
+  svy = svy,
+  #psu = c("id", "psu"),
+  match = "clusterID",
+  pop = "population",
+  verbose = FALSE,
+  show_plot = FALSE
+)
