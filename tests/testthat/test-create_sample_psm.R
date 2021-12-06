@@ -56,3 +56,22 @@ test_that("output has the correct structure", {
   expect_equal(names(svy), names(new_sample))
 })
 
+
+## Change variables name of village list
+x <- village_list
+names(x) <- c("id", "villageName", "population", "psu")
+
+svy <- sample_data
+names(svy) <- c("surveydate", "psu", "sex", "birthdate", "age",
+                "weight", "height", "oedema", "muac", "measure", "clothes")
+
+new_sample <- create_sample_psm(
+  x = x, svy = svy,
+  match = NULL, pop = "population",
+  sampling_type = "systematic"
+)
+
+test_that("output has the correct structure", {
+  expect_true(all(names(svy) %in% names(new_sample)))
+  expect_equal(names(svy), names(new_sample))
+})
