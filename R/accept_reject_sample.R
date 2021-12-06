@@ -92,7 +92,7 @@ accept_reject_psu <- function(x, svy, psu = "psu",
   for (i in psu.in.svy) {
     ## Test value
     if (is.null(match)) {
-      xstar <- x[x[[psu[1]]] == i, pop]
+      xstar <- x[x[[psu[2]]] == i & !is.na(x[[psu[2]]]), pop]
       #xstar <- subset(x, PSU.SMART == i)[[pop]]
     } else {
       xstar <- x[x[[match]] == i & !is.na(x[[match]]), pop]
