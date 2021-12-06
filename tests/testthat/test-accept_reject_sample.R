@@ -53,6 +53,8 @@ test_that("output has the correct structure", {
   expect_equal(names(svy), names(sim_survey))
 })
 
+file.remove("accept_reject_plot.png")
+
 ## Change variables name of village list
 x <- village_list
 names(x) <- c("id", "villageName", "population", "psu")
