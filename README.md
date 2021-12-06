@@ -16,7 +16,6 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 coverage](https://codecov.io/gh/ernestguevarra/surveysampler/branch/main/graph/badge.svg)](https://codecov.io/gh/ernestguevarra/surveysampler?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ernestguevarra/surveysampler/badge)](https://www.codefactor.io/repository/github/ernestguevarra/surveysampler)
 [![DOI](https://zenodo.org/badge/397585221.svg)](https://zenodo.org/badge/latestdoi/397585221)
-
 <!-- badges: end -->
 
 Studies that evaluate survey sampling and analysis approaches require
@@ -128,7 +127,7 @@ survey sample like below:
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
-    #> # A tibble: 382 × 11
+    #> # A tibble: 391 × 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <dbl> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
     #>  1 2020-12-20     2     2 NA            14    8     74.9      0   129 l      
@@ -141,7 +140,7 @@ survey sample like below:
     #>  8 2020-12-19     2     2 NA            59   17.8  107.       0   164 h      
     #>  9 2020-12-18     5     1 2019-12-08    12    8.8   74.4      0   147 l      
     #> 10 2020-12-18     5     1 2019-10-01    14    7.8   74.9      0   136 l      
-    #> # … with 372 more rows, and 1 more variable: clothes <chr>
+    #> # … with 381 more rows, and 1 more variable: clothes <chr>
 
 #### Propensity score matching
 
@@ -168,20 +167,20 @@ create_sample_psm(
 
 and returns a simulated unweighted survey sample like below:
 
-    #> # A tibble: 318 × 11
+    #> # A tibble: 254 × 11
     #>    surveydate   psu   sex birthdate    age weight height oedema  muac measure
     #>    <date>     <int> <int> <date>     <int>  <dbl>  <dbl>  <int> <int> <chr>  
-    #>  1 2020-12-16    18     2 NA             6    6.9   65        0   144 l      
-    #>  2 2020-12-16    16     1 2020-05-22     6    7.8   65.6      0   140 l      
-    #>  3 2020-12-19    13     2 2020-05-26     6    5.2   62.6      0   131 l      
-    #>  4 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      
-    #>  5 2020-12-20    14     1 NA             6    7.1   66.3      0   152 l      
-    #>  6 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      
-    #>  7 2020-12-23    30     2 NA             6    8.5   63.2      0   168 l      
-    #>  8 2020-12-23    24     1 2020-06-04     6    8.5   68.6      0   161 l      
-    #>  9 2020-12-18     4     2 2020-05-03     7    7.5   68.2      0   148 l      
-    #> 10 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
-    #> # … with 308 more rows, and 1 more variable: clothes <chr>
+    #>  1 2020-12-19    13     2 2020-05-26     6    5.2   62.6      0   131 l      
+    #>  2 2020-12-19     3     2 2020-06-19     6    7     69.1      0   133 l      
+    #>  3 2020-12-19    15     2 2020-06-13     6    5.4   62.4      0   127 l      
+    #>  4 2020-12-20     9     1 2020-05-23     6    7.1   65.5      0   123 l      
+    #>  5 2020-12-23    24     1 2020-06-04     6    8.5   68.6      0   161 l      
+    #>  6 2020-12-18    10     1 NA             7    6.9   69        0   119 l      
+    #>  7 2020-12-22    29     2 2020-05-10     7    6.3   63.6      0   127 l      
+    #>  8 2020-12-22    29     2 2020-04-24     7    7.4   66.6      0   134 l      
+    #>  9 2020-12-22    32     1 NA             7    7.7   64.7      0   156 l      
+    #> 10 2020-12-23    24     2 2020-05-17     7    6.5   63.2      0   140 l      
+    #> # … with 244 more rows, and 1 more variable: clothes <chr>
 
 ## Citation
 
