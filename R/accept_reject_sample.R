@@ -140,7 +140,7 @@ accept_reject_psu <- function(x, svy, psu = "psu",
     additional.psus.for.simulated.svy <- sample(
       accepted.psus,
       size = length(psu.in.svy) - length(accepted.psus),
-      replace = FALSE
+      replace = TRUE
     )
   }
 
