@@ -44,7 +44,8 @@ sim_survey <- accept_reject_psu(
   match = "clusterID",
   pop = "population",
   verbose = TRUE,
-  show_plot = TRUE
+  show_plot = TRUE,
+  save_plot = TRUE
 )
 
 test_that("output has the correct structure", {
