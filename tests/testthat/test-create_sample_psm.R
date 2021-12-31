@@ -75,3 +75,10 @@ test_that("output has the correct structure", {
   expect_true(all(names(svy) %in% names(new_sample)))
   expect_equal(names(svy), names(new_sample))
 })
+
+
+test_that("get_sampling_clusters produces a data.frame", {
+  expect_s3_class(
+    get_sampling_clusters(x = village_list, psu = "cluster", pop = "population"),
+    "data.frame")
+})
