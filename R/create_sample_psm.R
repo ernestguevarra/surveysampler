@@ -79,12 +79,6 @@ create_sample_psm <- function(x, svy,
   if (samp == "systematic") {
     ## Process cluster list dataset to produce a systematic sample of n_clusters
     ## clusters.
-    #sampling_interval <- floor(nrow(x) / n_clusters)
-    #random_start <- sample(1:sampling_interval, size = 1)
-    #selected_row_numbers <- seq(from = random_start,
-    #                            to = nrow(x),
-    #                            by = sampling_interval)
-    #sample_x <- sample_x[selected_row_numbers, ]
     sample_x <- get_sample_systematic(x = sample_x, n_sample = n_clusters)
   } else {
     ## Process cluster list dataset to produce a systematic sample of n_clusters
@@ -132,3 +126,73 @@ create_sample_psm <- function(x, svy,
   simulated_svy
 }
 
+
+################################################################################
+#
+#'
+#' Select sampling units from a set of potential sampling units using propensity
+#' score matching (PSM)
+#'
+#' @param x A data.frame of all potential primary sampling units (PSUs) to
+#'   sample from each uniquely identified and with corresponding populations.
+#' @param psu A single character value or vector of values corresponding to
+#'   the variable name/s for the primary sampling unit in *x* and *svy*.
+#'   Default is *"psu"*.
+#' @param pop A single character value corresponding to the variable name for
+#'   the population figures in *x*. Default is *"pop"*.
+#' @param sampling_type Which sampling type to use. Choice between *simple
+#'   random sample (simple)* or *systematic sample (systematic)*. Default is
+#'   *simple*.
+#'
+#' @return A data.frame drawn from *x* that contains the primary sampling
+#'   units selected by propensity score matching.
+#'
+#' @author Mark Myatt and Ernest Guevarra
+#'
+#' @examples
+#' get_sampling_clusters(
+#'   x = village_list,
+#'   psu = "cluster",
+#'   pop = "population"
+#' )
+#'
+#' @export
+#'
+#
+################################################################################
+
+get_sampling_clusters <- function(x, psu = NULL, pop = NULL,
+                                  sampling_type = c("simple", "systematic")) {
+  ##
+  x$group <- ifelse(is.na(x[[psu]]), FALSE, TRUE)
+
+  # Perform propensity score matching based on population using nearest
+  # neighbour algorithm
+  matched_sample <- MatchIt::matchit(
+    group ~ get(pop), data = x, method = "nearest", ratio = 1
+  )
+
+  # Get matched data
+  y <- MatchIt::match.data(matched_sample)
+
+  ## Determine sampling_type
+  samp <- match.arg(sampling_type)
+
+  ## Determine number of clusters needed
+  n_clusters <- nrow(x[!is.na(x$cluster), ])
+
+  ## Select a sample
+  if (samp == "systematic") {
+    ## Process cluster list dataset to produce a systematic sample of n_clusters
+    ## clusters.
+    z <- get_sample_systematic(x = y, n_sample = n_clusters)
+  } else {
+    ## Process cluster list dataset to produce a systematic sample of n_clusters
+    ## clusters.
+    selected_row_numbers <- sample(seq_len(nrow(x)), size = n_clusters)
+    z <- y[selected_row_numbers, ]
+  }
+
+  ## Return
+  z
+}
